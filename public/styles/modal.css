@@ -1,0 +1,79 @@
+.modal {
+    display: none;
+}
+
+.modal.on {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    background-color: var(--background);
+}
+
+.modal.on .warning {
+    background-color: var(--cover);
+    width: 90%;
+    margin: auto;
+    padding: 4rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.on .warning img {
+   justify-self: flex-start;
+}
+
+.modal.on .warning span {
+    font-size: 1.6rem;
+    padding: 2rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.modal.on .warning .buttons-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal.on .warning .buttons-group #modal-delete {
+    width: 40%;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red);
+    color: var(--text);
+    font-weight: 500;
+}
+
+.modal.on .warning .buttons-group #modal-back {
+    width: 40%;
+    text-decoration: none;
+    font-size: 1.6rem;
+    border: 2px solid var(--green);
+    padding: 1.2rem;
+    color: var(--green);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}

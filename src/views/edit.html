@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/public/styles/main.css">
+        <link rel="stylesheet" href="/public/styles/edit.css">
+        <title>agenda.dev</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1 id="title">agenda.dev</h1>
+
+                <a href="/src/views/index.html"><img width="36px" src="/public/images/arrow.svg" alt="Voltar"></a>
+            </header>
+
+            <main>
+                <form id="edit" action="/index.html" method="POST">
+                    <div class="input-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="name">Sobrenome</label>
+                        <input type="text" id="lastname" name="lastname">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="name">Github</label>
+                        <input type="text" id="github" name="github">
+                    </div>
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </main>
+
+            <footer>
+                <p>agenda.dev - 2021</p>
+            </footer>
+        </div>
+    </body>
+</html>
