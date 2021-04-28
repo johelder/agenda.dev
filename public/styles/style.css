@@ -36,6 +36,7 @@ header {
 
 header h1 {
     color: var(--text);
+    font-weight: 400;
 }
 
 header a {
@@ -57,3 +58,114 @@ header a img {
 }
 
 /* main */
+
+main {
+    padding-top: 0;
+
+}
+
+main > p {
+    color: rgb(140, 140, 140);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+main .contact {
+    background: var(--cover);
+    color: var(--text);
+    margin: 4rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 0;
+    margin-top: 2rem;
+
+    border-radius: .5rem;
+    position: relative;
+}
+
+main .contact:hover {
+    background: 
+    linear-gradient(90deg, rgba(4, 211, 97, 0.6) 0.45%, var(--cover) 31.4%), white;
+
+}
+
+main .contact::before {
+    content: ' ';
+    
+    width: .25rem;
+    height: 0%;
+    background-color: var(--text);
+  
+    border-radius: .313rem 0 0 .313rem;
+  
+    position: absolute;
+    top: 0;
+    left: -1px;
+  
+    transition: all .2s;
+}
+
+main .contact:hover::before {
+    height: 100%;
+}
+
+
+main .contact .contact-info {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: .1fr 2fr;
+}
+
+main .contact .contact-info #id {
+    grid-column: 1/2;
+    font-size: 1.2rem;
+    align-self: center;
+    padding: 1rem;
+    align-self: center;
+    color: rgb(140, 140, 140);
+}
+
+
+main .contact .contact-info .contact-name {
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+main .contact .contact-info .contact-name a {
+    margin-left: 1rem;
+}
+
+main .contact .contact-actions {
+    justify-self: flex-end;
+    display: flex;
+    padding: 1rem;
+}
+
+main .contact .contact-actions .edit {
+    margin-right: 1rem;
+    border-radius: .5rem;
+    padding: .4rem;
+}
+
+main .contact .contact-actions .delete {
+    margin-right: 1rem;
+
+    background-color: #b0423e;
+    border-radius: .5rem;
+    padding: .4rem;
+}
+
+/* footer */
+
+footer p {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
