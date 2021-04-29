@@ -1,0 +1,25 @@
+.button-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-group a {
+    width: 40%;
+    padding: .6rem;
+    margin: 2rem 0;
+    background: none;
+    border-radius: .5rem;
+    color: var(--text);
+    background-color: var(--red);
+    font-family: 'Ubuntu', sans-serif;
+    height: 3.2rem;
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 500;
+}

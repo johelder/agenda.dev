@@ -1,7 +1,5 @@
 /* header */
 
-
-
 header a {
     text-decoration: none;
     font-size: 1.2rem;
@@ -102,4 +100,6 @@ main .contact .contact-actions .delete {
     border-radius: .5rem;
     padding: .4rem;
 }
+
+
 

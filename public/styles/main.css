@@ -47,3 +47,18 @@ footer p {
     font-size: 1.2rem;
     color: var(--text);
 }
+
+@media (min-width: 1023px) {
+    :root {
+        font-size: 100%;
+    }
+
+    form .input-group input{
+        width: 50%;
+    }
+
+    #edit button {
+        align-self: flex-start;
+        width: 50%;
+    }
+}

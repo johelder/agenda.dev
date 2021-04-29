@@ -41,7 +41,7 @@ form .input-group input {
 
 form button {
     align-self: flex-end;
-    width: 50%;
+    width: 40%;
     padding: .6rem;
     margin: 2rem 0;
     background: none;
@@ -49,6 +49,7 @@ form button {
     border-radius: .5rem;
     color: var(--green);
     font-family: 'Ubuntu', sans-serif;
+    height: 3.2rem;
 
     font-weight: 500;
 }
