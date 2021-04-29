@@ -26,46 +26,34 @@
             <header>
                 <h1 id="title">agenda.dev</h1>
 
-                <a href="edit"><img src="/images/plus.svg" alt="Novo contato">Adicionar contato</a>
+                <a href="create"><img src="/images/plus.svg" alt="Novo contato">Adicionar contato</a>
             </header>
 
             <main>
-                <p>Total: 2</p>
+                <p>Total: <%= Contacts.length %> </p>
 
-                <div class="contact" data-id="1">
-                    <div class="contact-info">
-                        <span id="id">1</span>
-                        <div class="contact-name">
-                            <h2>Luis Felipe</h2>
-                            <a href="#"><img width="24px" src="/images/github.svg" alt="Github.com"></a>
+                <% Contacts.forEach(contact => { %>
+
+                    <div class="contact" data-id="<%= contact.id %> ">
+                        <div class="contact-info">
+                            <span id="id"> <%= contact.id %>  </span>
+                            <div class="contact-name">
+                                <h2><%= contact.name %>  <%= contact.lastname %> </h2>
+                                <a href="<%= contact.github %> "><img width="24px" src="/images/github.svg" alt="Github.com"></a>
+                            </div>
+                        </div>
+    
+                        <div class="contact-actions">
+                            <a class="edit" href="edit"><img src="/images/edit.svg" alt="Editar"></a>
+                            <a data-id="<%= contact.id %> " class="delete" href="#"><img src="/images/trash.svg" alt="Deletar"></a>
                         </div>
                     </div>
 
-                    <div class="contact-actions">
-                        <a class="edit" href="edit"><img src="/images/edit.svg" alt="Editar"></a>
-                        <a data-id="1" class="delete" href="#"><img src="/images/trash.svg" alt="Deletar"></a>
-                    </div>
-                </div>
-
-                <div class="contact" data-id="2">
-                    <div class="contact-info">
-                        <span id="id">2</span>
-                        <div class="contact-name">
-                            <h2>Marcos Antônio</h2>
-                            <a href="#"><img width="24px" src="/images/github.svg" alt="Github.com"></a>
-                        </div>
-                    </div>
-
-                    <div class="contact-actions">
-                        <a class="edit" href="edit"><img src="/images/edit.svg" alt="Editar"></a>
-                        <a data-id="2" class="delete" href="#"><img src="/images/trash.svg" alt="Deletar"></a>
-                    </div>
-                </div>
+                <% }) %> 
+ 
             </main>
 
-            <footer>
-                <p>agenda.dev - 2021</p>
-            </footer>
+            <%- include('parts/footer') %> 
         </div>
     </body>
 </html>

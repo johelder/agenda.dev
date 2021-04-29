@@ -13,38 +13,24 @@
 
         <div class="container">
             <header>
-                <h1 id="title">agenda.dev</h1>
+                <h1 id="title">Criar Contato</h1>
 
-                <a href="index"><img width="36px" src="/images/arrow.svg" alt="Voltar"></a>
+                <a href="/"><img width="36px" src="/images/arrow.svg" alt="Voltar"></a>
             </header>
 
             <main>
-                <form id="edit" action="index" method="POST">
-                    <div class="input-group">
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" name="name">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="name">Sobrenome</label>
-                        <input type="text" id="lastname" name="lastname">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="name">Github</label>
-                        <input type="text" id="github" name="github">
-                    </div>
+                <form id="create" action="/create" method="POST">
+                    
+                    <%- include('parts/inputs') %>
 
                     <div class="button-group">
-                        <a href="/src/views/index.html">Cancelar</a>
-                        <button type="submit">Salvar</button>
+                        <a href="/">Cancelar</a>
+                        <button type="submit">Salvar Contato</button>
                     </div>
                 </form>
             </main>
 
-            <footer>
-                <p>agenda.dev - 2021</p>
-            </footer>
+            <%- include('parts/footer') %> 
         </div>
     </body>
 </html>
