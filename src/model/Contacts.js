@@ -1,4 +1,4 @@
-const Contacts = [
+let Contacts = [
     {
         id: 1,
         name: 'Luis',
@@ -19,7 +19,11 @@ module.exports = {
         return Contacts
     },
     
-    set(newContact) {
+    create(newContact) {
         Contacts.push(newContact)
-    }
+    },
+
+    delete(contacts) {
+        Contacts = contacts
+    }   
 }

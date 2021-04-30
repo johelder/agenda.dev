@@ -17,7 +17,7 @@ module.exports = {
             ...contact
         }
 
-        Contacts.set(newContact)
+        Contacts.create(newContact)
         return res.redirect('/')
     }
 }

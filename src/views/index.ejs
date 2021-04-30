@@ -12,17 +12,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="modal">
-                <div class="warning">
-                    <img src="/images/trash-48.svg" alt="Excluir">
-                    <span>Deseja excluir este contato?</span>
-
-                    <div class="buttons-group">
-                        <a id="modal-delete" href="#">Excluir</a>
-                        <a id="modal-back" href="#">Voltar</a>
-                    </div>
-                </div>
-            </div>
+        
             <header>
                 <h1 id="title">agenda.dev</h1>
 
@@ -45,8 +35,22 @@
     
                         <div class="contact-actions">
                             <a class="edit" href="edit"><img src="/images/edit.svg" alt="Editar"></a>
-                            <a data-id="<%= contact.id %> " class="delete" href="#"><img src="/images/trash.svg" alt="Deletar"></a>
+                            <a class="delete" href="#"><img src="/images/trash.svg" alt="Deletar"></a>
                         </div>
+                    </div>
+
+                    <div class="modal">
+                        <div class="warning">
+                            <img src="/images/trash-48.svg" alt="Excluir">
+                            <span>Deseja excluir este contato?</span>
+        
+                            <div class="buttons-group">
+                                <button form="delete-contact" type="submit" id="modal-delete" href="#">Excluir</button>
+                                <a id="modal-back" href="/">Voltar</a>
+                            </div>
+                        </div>
+        
+                        <form id="delete-contact" action="/delete/<%= contact.id %>" method="post"></form>
                     </div>
 
                 <% }) %> 

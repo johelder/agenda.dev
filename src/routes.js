@@ -8,6 +8,7 @@ routes.get('/', DashboardController.index)
 
 routes.get('/create', CreateController.index)
 routes.post('/create', CreateController.create)
+routes.post('/delete/:id', DashboardController.delete)
 
 routes.get('/edit', EditController.edit)
 
