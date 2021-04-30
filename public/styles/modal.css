@@ -62,6 +62,8 @@
     background-color: var(--red);
     color: var(--text);
     font-weight: 500;
+    border: none;
+    cursor: pointer;
 }
 
 .modal.on .warning .buttons-group #modal-back {

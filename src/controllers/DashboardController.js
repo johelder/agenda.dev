@@ -8,14 +8,12 @@ module.exports = {
     delete(req, res) {
 
         const contactId = req.params.id
-        contacts = Contacts.get()
+        let contacts = Contacts.get()
 
-        let newContacts = []
+        newContacts = contacts.filter(contact => { return contact.id !== contactId })
 
-        contacts.forEach(contact => {
-            Number(contact.id) !== Number(contactId) ? newContacts.push(contact) : contact
-        })
-        
+        console.log(newContacts)
+ 
         Contacts.delete(newContacts)
         return res.redirect('/')
     }

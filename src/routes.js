@@ -8,8 +8,10 @@ routes.get('/', DashboardController.index)
 
 routes.get('/create', CreateController.index)
 routes.post('/create', CreateController.create)
+
 routes.post('/delete/:id', DashboardController.delete)
 
-routes.get('/edit', EditController.edit)
+routes.get('/edit/:id', EditController.edit)
+routes.post('/edit/:id', EditController.save)
 
 module.exports = routes 

@@ -25,5 +25,9 @@ module.exports = {
 
     delete(contacts) {
         Contacts = contacts
-    }   
+    },
+    
+    update(updatedContacts) {
+        Contacts = updatedContacts
+    }
 }

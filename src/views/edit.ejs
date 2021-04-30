@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles/main.css">
-        <link rel="stylesheet" href="/styles/edit.css">
-        <title>agenda.dev</title>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <h1 id="title">Editar Contato</h1>
 
-                <a href="/"><img width="36px" src="/images/arrow.svg" alt="Voltar"></a>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/edit.css">
+    <title>agenda.dev</title>
+</head>
 
-            <main>
-                <form id="edit" action="/" method="POST">
-                    
-                    <%- include('parts/inputs') %>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="title">Editar Contato</h1>
 
-                    <button type="submit">Salvar</button>
-                </form>
-            </main>
+            <a href="/"><img width="36px" src="/images/arrow.svg" alt="Voltar"></a>
+        </header>
 
-            <%- include('parts/footer') %> 
-        </div>
-    </body>
+        <main>
+            <form id="edit" action="/edit/<%= contact.id %> " method="POST">
+
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input value="<%= contact.name %>" type="text" id="name" name="name">
+                </div>
+
+                <div class="input-group">
+                    <label for="name">Sobrenome</label>
+                    <input value="<%= contact.lastname %>" type="text" id="lastname" name="lastname">
+                </div>
+
+                <div class="input-group">
+                    <label for="name">Github</label>
+                    <input value="<%= contact.github %>" type="text" id="github" name="github">
+                </div>
+
+
+                <button type="submit">Salvar</button>
+            </form>
+        </main>
+
+        <%- include('parts/footer') %>
+    </div>
+</body>
+
 </html>
