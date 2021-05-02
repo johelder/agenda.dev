@@ -1,33 +1,57 @@
-let Contacts = [
-    {
-        id: 1,
-        name: 'Luis',
-        lastname: 'Felipe',
-        github: 'https://github.com/luisfelipe'
-    },
-
-    {
-        id: 2,
-        name: 'Marcos',
-        lastname: 'Antônio',
-        github: 'https://github.com/marcosantonio'
-    }
-]
+const Database = require('../db/config')
 
 module.exports = {
-    get() {
-        return Contacts
+    async get() {
+
+        const db = await Database()
+
+        const data = await db.all(`SELECT * FROM contacts`)
+
+        await db.close()
+
+        return data
     },
     
-    create(newContact) {
-        Contacts.push(newContact)
+    async create(newContact) {
+        
+        const db = await Database()
+
+        await db.run(`
+            INSERT INTO contacts(
+                name,
+                lastname,
+                github
+            ) VALUES (
+                "${newContact.name}",
+                "${newContact.lastname}",
+                "${newContact.github}"
+            );
+        `)
+
+        await db.close()
     },
 
-    delete(contacts) {
-        Contacts = contacts
+    async delete(contactId) {
+        const db = await Database()
+
+        db.run(`
+            DELETE FROM contacts WHERE id = ${contactId}
+        `)
+
+        await db.close()
     },
     
-    update(updatedContacts) {
-        Contacts = updatedContacts
+    async update(updatedContacts, contactId) {
+
+        const db = await Database()
+
+        await db.run(`UPDATE contacts SET
+            name = "${updatedContacts.name}",
+            lastname = "${updatedContacts.lastname}",
+            github = "${updatedContacts.github}"
+            WHERE id = ${contactId}
+        `)
+
+        await db.close()
     }
 }

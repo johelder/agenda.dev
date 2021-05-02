@@ -1,18 +1,18 @@
 const Contacts = require('../model/Contacts')
 
 module.exports = {
-    index(req, res) {
-        return res.render('index', { Contacts: Contacts.get() })
+    async index(req, res) {
+
+        const contacts = await Contacts.get()
+    
+        return res.render('index', { Contacts: contacts })
     },
 
-    delete(req, res) {
+    async delete(req, res) {
 
         const contactId = req.params.id
-        let contacts = Contacts.get()
-
-        newContacts = contacts.filter(contact =>  Number(contact.id) !== Number(contactId))
          
-        Contacts.delete(newContacts)
+        await Contacts.delete(contactId)
         return res.redirect('/')
     }
 }

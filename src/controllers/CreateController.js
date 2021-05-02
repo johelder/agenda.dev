@@ -5,19 +5,19 @@ module.exports = {
         return res.render('create')
     },
 
-    create(req, res) {
-        const contacts = Contacts.get()
+    async create(req, res) {
+        const contacts = await Contacts.get()
         const contact = req.body
-        let id
+        let lastId = contacts[contacts.length - 1]?.id || 1
 
-        contacts.length === 0 ? id = 1 : id = contacts.length + 1
+        
 
         let newContact = {
-            id,
+            id: lastId + 1,
             ...contact
         }
 
-        Contacts.create(newContact)
+        await Contacts.create(newContact)
         return res.redirect('/')
     }
 }

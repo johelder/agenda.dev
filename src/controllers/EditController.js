@@ -1,32 +1,27 @@
 const Contacts = require('../model/Contacts')
 
 module.exports = {
-    edit(req, res) {
+    async edit(req, res) {
 
         const contactId = req.params.id
-        const contacts = Contacts.get()
+        const contacts = await Contacts.get()
 
         const currentContact = contacts.find(contact => Number(contact.id) === Number(contactId))
 
         return res.render('edit', { contact: currentContact })
     },
 
-    save(req, res) {
+    async save(req, res) {
         const contactId = req.params.id
-        let contacts = Contacts.get()
 
-        let currentContact = contacts.find(contact => Number(contact.id) === Number(contactId))
-        
-        currentContact = {
-            id: req.params.id,
+        updatadedContact = {
             name: req.body.name,
             lastname: req.body.lastname,
             github: req.body.github
         }
+        
 
-        contacts.splice(contactId - 1, 1, currentContact)
-
-        Contacts.update(contacts)
+        await Contacts.update(updatadedContact, contactId)
 
         return res.redirect('/')
     }
