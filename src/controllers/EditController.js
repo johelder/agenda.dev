@@ -6,7 +6,7 @@ module.exports = {
         const contactId = req.params.id
         const contacts = Contacts.get()
 
-        const currentContact = contacts.find(contact => { return Number(contact.id) === Number(contactId) })
+        const currentContact = contacts.find(contact => Number(contact.id) === Number(contactId))
 
         return res.render('edit', { contact: currentContact })
     },
@@ -15,7 +15,7 @@ module.exports = {
         const contactId = req.params.id
         let contacts = Contacts.get()
 
-        let currentContact = contacts.find(contact => { return Number(contact.id) === Number(contactId) })
+        let currentContact = contacts.find(contact => Number(contact.id) === Number(contactId))
         
         currentContact = {
             id: req.params.id,

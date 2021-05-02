@@ -10,10 +10,8 @@ module.exports = {
         const contactId = req.params.id
         let contacts = Contacts.get()
 
-        newContacts = contacts.filter(contact => { return contact.id !== contactId })
-
-        console.log(newContacts)
- 
+        newContacts = contacts.filter(contact =>  Number(contact.id) !== Number(contactId))
+         
         Contacts.delete(newContacts)
         return res.redirect('/')
     }
